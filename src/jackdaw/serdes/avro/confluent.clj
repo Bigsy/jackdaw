@@ -8,7 +8,8 @@
   serde operation."
   [schema-registry-url schema key? & [{:keys [type-registry
                                               schema-registry-client
-                                              coercion-cache]}]]
+                                              coercion-cache
+                                              coercion-disabled?]}]]
   (let [reg (if (nil? type-registry)
               jsa/+base-schema-type-registry+
               type-registry)]
@@ -17,4 +18,5 @@
                 :avro.schema-registry/client schema-registry-client}
                {:avro/schema schema
                 :key? key?
+                :coercion-disabled? coercion-disabled?
                 :avro/coercion-cache coercion-cache})))

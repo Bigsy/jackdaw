@@ -40,7 +40,7 @@
              patch+           (inc patch)
              branch+          (-> branch
                                   (.replaceAll "[^a-zA-Z0-9]" "_"))]
-         (format "%s.%d-%s-SNAPSHOT" prefix patch+ branch+))))}
+         (format "%s.%d-%s-SNAPSHOT1" prefix patch+ branch+))))}
 
   :profiles {;; Provide an alternative to :leiningen/default, used to include :shared
              :default
